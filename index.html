@@ -840,6 +840,7 @@
     <div class="container">
       <span>&copy; 2025 Bharath &amp; Companies. All rights reserved.</span>
       <span>Premium uPVC Manufacturer — Coimbatore, Tamil Nadu</span>
+      <span>Powered by VV Codes</span>
     </div>
   </div>
 </footer>
@@ -850,7 +851,33 @@
   <div class="fab-ring r2"></div>
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 11a19.79 19.79 0 01-3-8.57A2 2 0 012.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006 6l1.27-.45a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 18.92z"/></svg>
 </a>
-
+<script>
+  // WhatsApp CTA — redirects "Request Consultation" form submissions to WhatsApp
+  (function(){
+    var WA_NUMBER = "919585751941"; // country code + number, no + or spaces
+    var form = document.getElementById('contactForm');
+    if(!form) return;
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = (document.getElementById('cfName')||{}).value || '';
+      var phone = (document.getElementById('cfPhone')||{}).value || '';
+      var product = (document.getElementById('cfProduct')||{}).value || '';
+      var city = (document.getElementById('cfCity')||{}).value || '';
+      var msg = (document.getElementById('cfMsg')||{}).value || '';
+ 
+      var lines = ["Hi, I'd like to request a free consultation."];
+      if(name) lines.push("Name: " + name);
+      if(phone) lines.push("Phone: " + phone);
+      if(product) lines.push("Product Interest: " + product);
+      if(city) lines.push("City: " + city);
+      if(msg) lines.push("Message: " + msg);
+ 
+      var text = encodeURIComponent(lines.join("\n"));
+      var waUrl = "https://wa.me/" + WA_NUMBER + "?text=" + text;
+      window.open(waUrl, "_blank");
+    });
+  })();
+</script>
 <script src="script.js"></script>
 </body>
 </html>
